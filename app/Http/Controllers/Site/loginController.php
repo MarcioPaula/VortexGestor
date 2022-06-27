@@ -19,7 +19,7 @@ class loginController extends Controller
         {
             return redirect()->route('admin.treinos');
         }
-
+        session(['loginincorreto' => 'ativo']);
         return redirect()->route('login');
     }
     public function sair()

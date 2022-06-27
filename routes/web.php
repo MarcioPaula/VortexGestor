@@ -23,6 +23,8 @@ Route::get('/login',[loginController::class, 'index'])->name('login');
 Route::post('/login/entrar',[loginController::class, 'entrar'])->name('site.login.entrar');
 Route::get('/login/sair',[loginController::class, 'sair'])->name('site.login.sair');
 
+Route::post('/treino/aluno',[alunosController::class, 'treino'])->name('admin.alunos.treino');
+
 
 Route::group(['middleware'=>'auth'],function(){
 

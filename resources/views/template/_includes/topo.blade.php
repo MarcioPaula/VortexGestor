@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+        #toast-container {
+            top: auto !important;
+            left: auto !important;
+            bottom: 10%;
+            right:7%;
+        }
+    </style>
+
     <title>@yield('titulo')</title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

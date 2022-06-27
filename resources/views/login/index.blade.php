@@ -29,6 +29,11 @@
 
         </div>
     </div>
-
+    @if(session('loginincorreto')=='ativo')
+        <script>
+            M.toast({html: 'Email ou senha invalidos',classes:'red bottom'})
+        </script>
+        {{session(['loginincorreto' => 'inativo'])}}
+    @endif
 
 @endsection

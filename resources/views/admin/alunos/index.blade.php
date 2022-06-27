@@ -31,8 +31,8 @@
             <td>{{$registro->treino}}</td>
 
             <td>
-                <a class="btn btn-small amber darken-4" href="{{route('admin.alunos.editar',$registro->id)}}"><i class="material-icons">edit</i></a>
-                <a class="btn btn-small red lighten-3" onclick="notifica()" href="{{route('admin.alunos.deletar',$registro->id)}}"><i class="material-icons">delete</i></a>
+                <a class="btn btn-small amber darken-3" href="{{route('admin.alunos.editar',$registro->id)}}"><i class="material-icons">edit</i></a>
+                <a class="btn btn-small red darken-3" onclick="notifica()" href="{{route('admin.alunos.deletar',$registro->id)}}"><i class="material-icons">delete</i></a>
 
             </td>
 

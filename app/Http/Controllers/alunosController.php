@@ -51,6 +51,37 @@ class alunosController extends Controller
         return redirect()->route('admin.alunos');
 
     }
+
+    public function treino(request $req)
+    {
+
+        $alunos = aluno::where([
+            ['cpf', '=', $req->cpf],
+        ])->first();
+
+        if($alunos == true)
+        {
+            $treino = treino::where([
+                ['treino', '=', $alunos['treino']],
+            ])->first();
+
+            if($treino == true) {
+
+                return view('treino', compact('alunos', 'treino'));
+            }else
+            {
+                session(['treinonaocadastrado' => 'ativo']);
+                return redirect()->route('home');
+            }
+
+        }else
+        {
+            session(['cpfinvalido' => 'ativo']);
+            return redirect()->route('home');
+        }
+
+
+    }
 }
 
 

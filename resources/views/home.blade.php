@@ -6,28 +6,52 @@
 
 @section('conteudo')
 
+
+
     <div class="container">
-        <br><br>
+        <h3 class="center">Pesquisar treino</h3>
         <div class="row">
-                @foreach($treinos as $treino)
 
+            <form method="post" action="{{route('admin.alunos.treino')}}">
+                {{csrf_field()}}
 
-                    <div class="col s12 m4">
-                        <div class="card blue-grey darken-1">
-                                <span class="card-title white-text ">{{ $treino->treino}}</span>
-                            <div class="card-content  white-text">
-                                <p>{{$treino->descricao}}</p>
-                            </div>
-                            <div class="card-action">
-                                <a href="{{route('admin.treinos.download',$treino->arquivo)}}" class="btn-floating halfway-fab waves-effect waves-light blue"><i class="material-icons">download</i></a>
-
-                            </div>
-                        </div>
-                    </div>
-            @endforeach
+                <div class="input-field">
+                    <input type="text" required autocomplete="off" name="cpf">
+                    <label>CPF</label>
                 </div>
+                <button class="btn deep-orange">Enviar</button>
+
+            </form>
+
         </div>
     </div>
 
+    @if(session('cpfinvalido')=='ativo')
+        <script>
+            M.toast({html: 'CPF não cadastrado',classes:'red'})
+        </script>
+        {{session(['cpfinvalido' => 'inativo'])}}
+    @endif
+
+    @if(session('treinonaocadastrado')=='ativo')
+        <script>
+            M.toast({html: 'Treino não cadastrado',classes:'red'})
+        </script>
+        {{session(['treinonaocadastrado' => 'inativo'])}}
+    @endif
 
 @endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,7 +10,7 @@ class alunosController extends Controller
 {
     public function index()
     {
-        $registros = aluno::all();
+        $registros = aluno::paginate(10);
         return view('admin.alunos.index',compact('registros'));
     }
 

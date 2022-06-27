@@ -2,10 +2,12 @@
 
 @section('titulo','Alunos')
 
+@section('cabeçalho','Alunos')
+
 @section('conteudo')
 
     <div class="container">
-        <h3 class="center">Lista de Alunos</h3>
+        <br><br>
         <div class="row">
             <a class="btn green lighten-1" href="{{route('admin.alunos.criar')}}"><i class="material-icons">add</i></a>
         </div>

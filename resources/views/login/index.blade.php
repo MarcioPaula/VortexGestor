@@ -2,6 +2,8 @@
 
 @section('titulo','Login')
 
+@section('cabeçalho','Login')
+
 @section('conteudo')
 
     <div class="container">

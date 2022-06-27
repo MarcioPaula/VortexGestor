@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class treino extends Model
 {
+    use HasFactory;
     protected $fillable = [
         'treino',
         'descricao',

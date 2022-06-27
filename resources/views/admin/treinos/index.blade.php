@@ -2,10 +2,12 @@
 
 @section('titulo','Treinos')
 
+@section('cabeçalho','Treinos')
+
 @section('conteudo')
 
     <div class="container">
-        <h3 class="center">Treinos</h3>
+        <br><br>
         <div class="row">
             <a class="btn green lighten-1" href="{{route('admin.treinos.criar')}}"><i class="material-icons">add</i></a>
         </div>

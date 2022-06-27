@@ -6,9 +6,11 @@
 
     <div class="container">
         <h3 class="center">Lista de Alunos</h3>
-
+        <div class="row">
+            <a class="btn green lighten-1" href="{{route('admin.alunos.criar')}}"><i class="material-icons">add</i></a>
+        </div>
     <div class="row">
-    <table class="striped">
+    <table class="highlight">
         <thead>
         <tr>
             <th>Id</th>
@@ -27,8 +29,8 @@
             <td>{{$registro->treino}}</td>
 
             <td>
-                <a class="btn amber darken-4" href="{{route('admin.alunos.editar',$registro->id)}}"><i class="material-icons">edit</i></a>
-                <a class="btn red lighten-3" onclick="notifica()" href="{{route('admin.alunos.deletar',$registro->id)}}"><i class="material-icons">delete</i></a>
+                <a class="btn btn-small amber darken-4" href="{{route('admin.alunos.editar',$registro->id)}}"><i class="material-icons">edit</i></a>
+                <a class="btn btn-small red lighten-3" onclick="notifica()" href="{{route('admin.alunos.deletar',$registro->id)}}"><i class="material-icons">delete</i></a>
 
             </td>
 
@@ -37,9 +39,31 @@
         </tbody>
     </table>
     </div>
-    <div class="row">
-        <a class="btn green lighten-1" href="{{route('admin.alunos.criar')}}"><i class="material-icons">add</i></a>
-    </div>
+
+        <ul class="pagination center">
+            {{-- Previous Page Link --}}
+            @if ($registros->onFirstPage())
+                <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+            @else
+                <li class="waves-effect"><a href="{{ $registros->previousPageUrl() }}"><i class="material-icons">chevron_left</i></a></li>
+            @endif
+
+            {{-- Page Number Links --}}
+            @for($i=1; $i<=$registros->lastPage(); $i++)
+                @if($i==$registros->currentPage())
+                    <li class="active"><a href="?page={{$i}}">{{$i}}</a></li>
+                @else
+                    <li class="waves-effect"><a href="?page={{$i}}">{{$i}}</a></li>
+                @endif
+            @endfor
+
+            {{-- Next Page Link --}}
+            @if ($registros->hasMorePages())
+                <li class="waves-effect"><a href="{{ $registros->nextPageUrl() }}"><i class="material-icons">chevron_right</i></a></li>
+            @else
+                <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+            @endif
+        </ul>
     </div>
 
     @if(session('delete')=='ativo')

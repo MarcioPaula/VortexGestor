@@ -9,7 +9,7 @@ class treinosController extends Controller
 {
     public function index()
     {
-    $registros = treino::all();
+    $registros = treino::paginate(10);
     return view('admin.treinos.index',compact('registros'));
     }
 

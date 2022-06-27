@@ -1,6 +1,6 @@
 @extends('template.site')
 
-@section('titulo','Alunos')
+@section('titulo','Treinos')
 
 @section('conteudo')
 

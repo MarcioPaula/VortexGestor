@@ -11,6 +11,7 @@
         <form action="{{route('admin.alunos.atualizar',$registro)}}">
             {{csrf_field()}}
             <input type="hidden" name="_method" value="put">
+
             @include('admin.alunos._form')
 
             <button class="btn deep-orange">Atualizar dados</button>

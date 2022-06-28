@@ -67,7 +67,7 @@ class alunosController extends Controller
 
             if($treino == true) {
 
-                return view('treino', compact('alunos', 'treino'));
+                return view('site.treino', compact('alunos', 'treino'));
             }else
             {
                 session(['treinonaocadastrado' => 'ativo']);

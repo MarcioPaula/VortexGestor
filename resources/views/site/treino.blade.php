@@ -2,7 +2,7 @@
 
 @section('titulo','Pagina Inicial')
 
-@section('cabeçalho','Inicio')
+@section('cabeçalho','- Inicio')
 
 @section('conteudo')
 

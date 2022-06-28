@@ -2,7 +2,7 @@
 
 @section('titulo','Alunos')
 
-@section('cabeçalho','Alunos')
+@section('cabeçalho','- Alunos')
 
 @section('conteudo')
 

@@ -42,10 +42,10 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/admin/treinos/editar/{id}',[treinosController::class, 'editar'])->name('admin.treinos.editar');
     Route::get('/admin/treinos/atualizar/{id}',[treinosController::class, 'atualizar'])->name('admin.treinos.atualizar');
     Route::get('/admin/treinos/deletar/{id}',[treinosController::class, 'deletar'])->name('admin.treinos.deletar');
-
+    Route::get('/search',[treinosController::class,'search'])->name('admin.treinos.pesquisa');
 });
 
-Route::get('{id}',[treinosController::class, 'download'])->name('admin.treinos.download');
+Route::get('/{id}',[treinosController::class, 'download'])->name('admin.treinos.download');
 
 
 

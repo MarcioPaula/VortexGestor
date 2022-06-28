@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!--JavaScript at end of body for optimized loading-->
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
@@ -26,7 +27,7 @@
 <header>
     <nav>
         <div class="nav-wrapper blue lighten-2">
-            <a href="#!" class="brand-logo"> Vortex Gestor - @yield('cabeçalho')</a>
+            <a href="#!" class="brand-logo"> Vortex Gestor @yield('cabeçalho')</a>
             <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="/">Pagina inicial</a></li>

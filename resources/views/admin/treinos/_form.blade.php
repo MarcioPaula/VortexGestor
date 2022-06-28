@@ -11,7 +11,7 @@
     <div class="file-field input-field">
         <div class="btn">
             <span>Arquivo</span>
-            <input name="arquivo" required type="file" value="{{isset($registro -> arquivo) ? $registro -> arquivo : ''}}">
+            <input name="arquivo" type="file" value="{{isset($registro -> arquivo) ? $registro -> arquivo : ''}}">
         </div>
         <div class="file-path-wrapper">
             <input class="file-path validate" type="text" value="{{isset($registro -> arquivo) ? $registro -> arquivo : ''}}">

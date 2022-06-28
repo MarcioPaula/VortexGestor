@@ -2,7 +2,7 @@
 
 @section('titulo','Pagina Inicial')
 
-@section('cabeçalho','Inicio')
+@section('cabeçalho','- Inicio')
 
 @section('conteudo')
 
@@ -11,7 +11,6 @@
     <div class="container">
         <h3 class="center">Pesquisar treino</h3>
         <div class="row">
-
             <form method="post" action="{{route('admin.alunos.treino')}}">
                 {{csrf_field()}}
 
@@ -22,7 +21,6 @@
                 <button class="btn deep-orange">Enviar</button>
 
             </form>
-
         </div>
     </div>
 

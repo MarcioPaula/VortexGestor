@@ -2,7 +2,7 @@
 
 @section('titulo','Login')
 
-@section('cabeçalho','Login')
+@section('cabeçalho','- Login')
 
 @section('conteudo')
 
@@ -10,7 +10,8 @@
         <h3 class="center">Login</h3>
         <div class="row">
 
-            <form method="post" action="{{route('site.login.entrar')}}">
+            <div class="col s4 offset-s4">
+            <form  method="post" action="{{route('site.login.entrar')}}">
                 {{csrf_field()}}
 
                 <div class="input-field">
@@ -26,7 +27,7 @@
                 <button class="btn deep-orange">Logar</button>
 
             </form>
-
+            </div>
         </div>
     </div>
     @if(session('loginincorreto')=='ativo')

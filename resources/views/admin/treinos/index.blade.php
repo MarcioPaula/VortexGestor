@@ -2,16 +2,21 @@
 
 @section('titulo','Treinos')
 
-@section('cabeçalho','Treinos')
+@section('cabeçalho','- Treinos')
 
 @section('conteudo')
-
+    <meta name="_token" content="{{ csrf_token() }}">
     <div class="container">
         <br><br>
         <div class="row">
             <a class="btn green lighten-1" href="{{route('admin.treinos.criar')}}"><i class="material-icons">add</i></a>
         </div>
         <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">search</i>
+                <input id="search" name="search" type="text" >
+                <label for="icon_prefix">Localizar</label>
+            </div>
             <table class="highlight">
                 <thead>
                 <tr>
@@ -85,4 +90,24 @@
         </script>
         {{session(['editar' => 'inativo'])}}
     @endif
+
+
+    <script type="text/javascript">
+        $('#search').on('keyup',function(){
+            $value=$(this).val();
+            $.ajax({
+                type : 'get',
+                url : '{{URL::to('search')}}',
+                data:{'search':$value},
+                success:function(data){
+                    $('tbody').html(data);
+                }
+            });
+        })
+    </script>
+    <script type="text/javascript">
+        $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+    </script>
+
+
 @endsection

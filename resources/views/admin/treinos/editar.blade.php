@@ -8,12 +8,12 @@
         <h3 class="center">Editar treino</h3>
     <div class="row">
 
-        <form action="{{route('admin.treinos.atualizar',$registro)}}">
+        <form  action="{{route('admin.treinos.atualizar',$registro)}}" method="POST" enctype="multipart/form-data">
             {{csrf_field()}}
-            <input type="hidden" name="_method" value="put">
+
             @include('admin.treinos._form')
 
-            <button class="btn deep-orange">Atualizar dados</button>
+            <button class="btn deep-orange">Salvar</button>
 
         </form>
 

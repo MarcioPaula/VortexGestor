@@ -34,15 +34,15 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/admin/alunos/editar/{id}',[alunosController::class, 'editar'])->name('admin.alunos.editar');
     Route::get('/admin/alunos/atualizar/{id}',[alunosController::class, 'atualizar'])->name('admin.alunos.atualizar');
     Route::get('/admin/alunos/deletar/{id}',[alunosController::class, 'deletar'])->name('admin.alunos.deletar');
-
+    Route::get('alunos/search',[alunosController::class,'search'])->name('admin.alunos.pesquisa');
 
     Route::get('/admin/treinos/',[treinosController::class, 'index'])->name('admin.treinos');
     Route::get('/admin/treinos/criar/',[treinosController::class, 'criar'])->name('admin.treinos.criar');
     Route::post('/admin/treinos/salvar/',[treinosController::class, 'salvar'])->name('admin.treinos.salvar');
     Route::get('/admin/treinos/editar/{id}',[treinosController::class, 'editar'])->name('admin.treinos.editar');
-    Route::get('/admin/treinos/atualizar/{id}',[treinosController::class, 'atualizar'])->name('admin.treinos.atualizar');
+    Route::post('/admin/treinos/atualizar/{id}',[treinosController::class, 'atualizar'])->name('admin.treinos.atualizar');
     Route::get('/admin/treinos/deletar/{id}',[treinosController::class, 'deletar'])->name('admin.treinos.deletar');
-    Route::get('/search',[treinosController::class,'search'])->name('admin.treinos.pesquisa');
+    Route::get('treinos/search',[treinosController::class,'search'])->name('admin.treinos.pesquisa');
 });
 
 Route::get('/{id}',[treinosController::class, 'download'])->name('admin.treinos.download');

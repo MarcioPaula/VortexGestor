@@ -97,7 +97,7 @@
             $value=$(this).val();
             $.ajax({
                 type : 'get',
-                url : '{{URL::to('search')}}',
+                url : '{{URL::to('treinos/search')}}',
                 data:{'search':$value},
                 success:function(data){
                     $('tbody').html(data);

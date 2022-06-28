@@ -49,15 +49,14 @@ class treinosController extends Controller
         $dados = $req->all();
 
         if ($req->hasFile('arquivo')) {
-
-        }else{
             $arquivo = $req->file('arquivo');
             $num = rand(1111, 9999);
             $dir = "upload/treinos";
             $ext = $arquivo->guessClientExtension();
-            $nomearquivo = "treino_" . $num . "1." . $ext;
+            $nomearquivo = "treino_" . $num . "." . $ext;
             $arquivo->move($dir, $nomearquivo);
             $dados['arquivo'] = $dir . "/" . $nomearquivo;
+
         }
 
         treino::find($id)->update($dados);
